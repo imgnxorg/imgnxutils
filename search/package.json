@@ -1,0 +1,19 @@
+{
+  "name": "search",
+  "packageManager": "yarn@4.5.3",
+  "type": "module",
+  "installConfig": {
+    "hoistingLimits": "workspaces",
+    "pnp": false
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^9.16.0",
+    "eslint-plugin-react": "^7.37.2",
+    "typescript": "^4.0.0"
+  }
+}

@@ -1,0 +1,1 @@
+../../../thoughts/Extensions/things-to-add-to-vs-code.md

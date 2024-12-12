@@ -1,0 +1,9 @@
+[submodule "_heaven"]
+	path = _heaven
+	url = file:///./_heaven
+[submodule "pa11y"]
+	path = pa11y
+	url = file:///./pa11y
+[submodule "sound/sheet-music-reader"]
+	path = sound/sheet-music-reader
+	url = file:///./sound/sheet-music-reader

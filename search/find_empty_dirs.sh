@@ -1,0 +1,1 @@
+find -L wkbn $@

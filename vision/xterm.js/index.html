@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Web Terminal</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css"
+        />
+        <style>
+            body,
+            html {
+                margin: 0;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #000;
+                color: #fff;
+            }
+            #terminal {
+                width: 80%;
+                height: 80%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="terminal"></div>
+        <script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+            const term = new Terminal();
+            term.open(document.getElementById("terminal"));
+
+            // Send commands to the server
+            term.onKey(({ key }) => {
+                term.write(key);
+                if (key === "\r") {
+                    // Enter key
+                    const command = term.buffer.active
+                        .getLine(term.buffer.active.cursorY)
+                        .translateToString()
+                        .trim();
+                    term.write("\r\n");
+                    socket.emit("runCommand", command);
+                }
+            });
+
+            // Display command output
+            socket.on("output", (data) => {
+                term.write(data);
+            });
+        </script>
+    </body>
+</html>

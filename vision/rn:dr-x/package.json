@@ -1,0 +1,21 @@
+{
+  "name": "rendering",
+  "version": "1.0.0",
+  "main": "rn/dr-x",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "write:dev": "yarn && yarn install && open dist/index.html",
+    "read:docs": "man 7 mdoc"
+  },
+  "keywords": ["photomanipulation", "rendering", "canvas", "image", "2d", "3d", "image manipulation"],
+  "author": "Donald Wayne Moore Jr.",
+  "license": "0BSD",
+  "description": "A photomanipulation, image rendering, and LUT studio that runs on an HTML5 Canvas.",
+  "dependencies": {
+    "@xterm/xterm": "^5.5.0",
+    "gulp": "^5.0.0",
+    "js-tokens": "^9.0.1",
+    "prettier": "^3.4.2",
+    "webpack": "^5.97.1"
+  }
+}

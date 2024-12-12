@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="./imgnx.js" onload="log('iMgnx loaded')"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"
+    onload="console.log('jQuery loaded'); init();"></script>
+  <script src="https://cdn.tailwindcss.com" onload="log('Tailwind loaded')"></script>
+  <script type="module">
+    import { LaTeXJSComponent } from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.mjs";
+    (async () => {
+      await customElements.define("latex-js", LaTeXJSComponent);
+      log("LaTex loaded");
+      Array.from(document.querySelectorAll("latex-js")).forEach(
+        (el) => {
+          console.log("LaTeXJSComponent", el, el.classList);
+          el.classList.remove("opacity-0");
+        }
+      );
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chrome Tab Group Legend</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link id="favicon" rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍎</text></svg>" />
+  <!-- Load whichever light and dark scales you need -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@radix-ui/colors@latest/mauve.css" />
+</head>
+
+<body class="bg-[--primary-2] px-12 py-10">
+  <div class="fixed inset-0 z-10 flex justify-center opacity-50 pointer-events-none stack">
+    <img src="./graffiti-logo.png" alt="IMGNX Logo" id="logo"
+      class="object-contain w-[500px] relative -top-24 filter invert" style="
+                    filter: drop-shadow(0 10px 8px rgb(255 255 255 / 0.1))
+                        drop-shadow(0 4px 3px rgb(255 255 255 / 0.1))
+                        var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+                        var(--tw-grayscale) var(--tw-hue-rotate)
+                        var(--tw-invert) var(--tw-saturate) var(--tw-sepia)
+                        var(--tw-drop-shadow);
+                    -webkit-box-reflect: below -140px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+                " />
+  </div>
+  <div class="fixed top-0 z-10 right-0">
+    <div class="flex max-w-[270px]">
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#f00]">
+          f
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#f00]">
+          r
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#f00]">
+          e
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#0ff]">
+          e
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#0ff]">
+          o
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#0ff]">
+          n
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#ff0]">
+          l
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#ff0]">
+          i
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#ff0]">
+          n
+        </div>
+      </div>
+    </div>
+    <div class="flex max-w-[270px]">
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#641723]">
+          e
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#e5484d]">
+          m
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#fffcfc]">
+          a
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#0d3c48]">
+          r
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#00a2c7]">
+          k
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#fafdfe]">
+          e
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#3b352b]">
+          t
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#978365]">
+          p
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#fdfdfc]">
+          l
+        </div>
+      </div>
+    </div>
+    <div class="flex max-w-[270px]">
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#ffd1d9]">
+          a
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#e5484d]">
+          c
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#191111]">
+          e
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#b6ecf7]">
+          .
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#00a2c7]">
+          c
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#0b161a]">
+          o
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#e8e2d9]">
+          m
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#978365]">
+          &nbsp;
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#121211]">
+          T
+        </div>
+      </div>
+    </div>
+    <div class="flex max-w-[270px] invert">
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#641723]">
+          h
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#e5484d]">
+          e
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#fffcfc]">
+          &nbsp;
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#0d3c48]">
+          m
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#00a2c7]">
+          a
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#fafdfe]">
+          r
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#3b352b]">
+          k
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#978365]">
+          e
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#fdfdfc]">
+          t
+        </div>
+      </div>
+    </div>
+    <div class="flex max-w-[270px] invert">
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#ffd1d9]">
+          p
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#e5484d]">
+          l
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#191111]">
+          a
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#b6ecf7]">
+          c
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#00a2c7]">
+          e
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#0b161a]">
+          &nbsp;
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#e8e2d9]">
+          o
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#978365]">
+          f
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#121211]">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+    <div class="flex max-w-[270px] invert">
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#f00]">
+          t
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#f00]">
+          h
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#f00]">
+          e
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#0ff]">
+          &nbsp;
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#0ff]">
+          m
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#0ff]">
+          i
+        </div>
+      </div>
+      <div class="w-1/3 h-[30px] overflow-clip flex">
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#ff0]">
+          n
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#ff0]">
+          d
+        </div>
+        <div class="h-full min-w-0 w-[30px] flex justify-center items-center bg-[#ff0]">
+          .
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 container max-w-4xl mx-auto gap-8">
+    <div class="border rounded-[--pi] overflow-clip shadow-lg flex items-center justify-center bg-black relative"
+      style="border: 10px outset #444444">
+      <div class="absolute top-4 left-5 rounded-full h-32 w-16" style="border: 2px outset #888888">
+        <div class="absolute rounded-full h-12 w-12 flex items-center justify-center w-full h-full inset-0"
+          style="border: 3px outset #bbbbbb">
+          <div class="absolute top-4 rounded-full h-8 w-8 outline outline-neutral-600 flex items-center justify-center"
+            style="border: 10px inset #444">
+            <div class="absolute rounded-full h-3 w-3 animate-pulse" style="box-shadow: inset 0 0 3px #ff0044"></div>
+          </div>
+        </div>
+      </div>
+      <div class="relative brightness-1 text-[8rem] flex items-center justify-center">
+        <span class="brightness-[1000]">🍎</span>
+        <span
+          class="absolute inset-0 bottom-[-30px] left-3 scale-75 ml-[30%] z-[1] brightness-1 text-[8rem] brightness-0 rotate-[170deg] origin-right">🍎</span>
+      </div>
+    </div>
+    <div
+      class="relative shadow-xl rounded-[--pi] bg-gradient-to-t from-[--cyan-5] to-[--mauve-5] via-[--mauve-5] overflow-clip bg-[--mauve-surface] border-[4px] border-neutral stack overflow-clip"
+      style="border: 10px outset #444444">
+      <div class="w-5/12 h-4 top-0 rounded-b-full bg-black absolute" style="border: 2px inset #ccc; border-top: none">
+      </div>
+      <div class="isolate stack h-full w-full bg-[#202020]">
+        <div class="w-full">
+          <h2
+            class="text-center border-collapse px-4 overflow-ellipsis whitespace-nowrap truncate py-1 font-extrabold echo text-4xl bg-[#101010] text-white border-y-4 border-y-black mb-0 pt-4 shadow-inner tracking-tighter drop-shadow"
+            data-echo="Legend" data-title="Main">
+            Legend
+          </h2>
+          <h3
+            class="text-center text-neutral-50 px-4 text-xl overflow-ellipsis whitespace-nowrap truncate font-sans tracking-tighter text-transparent">
+            Chrome
+          </h3>
+          <div class="px-4">
+            <table class="table table-striped table-fixed border-collapse w-full shadow-inner">
+              <thead class="border-collapse">
+                <tr
+                  class="text-white divide-x-2 divide-[--mauve-10] shadow-inner shadow-[--mauve-11] font-light border-b-4 border-b-[--mauve-7] border-double rounded-t overflow-clip">
+                  <th class="w-[68px]">Color</th>
+                  <th>Group</th>
+                </tr>
+              </thead>
+            </table>
+            <table class="table table-striped table-auto border-separate w-full shadow-inner">
+              <tbody class="capitalize">
+                <tr class="even:bg-[--mauve-2] odd:bg-white divide-x-4 divide-double divide-[--mauve-12]">
+                  <td class="font-semibold w-[62px] mx-4 px-2 bg-white-400 border-4 border-neutral-600">
+                    <div class="text-center w-full text-neutral-300 text-3xl">
+                      1
+                    </div>
+                  </td>
+                  <td class="p-2 bg-neutral-50 text-[#080808] pl-3">
+                    <h3 class="font-bold mb-0 leading-tight">
+                      DevOps
+                    </h3>
+                    <p class="mt-0 text-sm">
+                      Cloud Services & Infrastructure
+                    </p>
+                  </td>
+                </tr>
+                <tr class="even:bg-[--mauve-2] odd:bg-white divide-x-4 divide-double divide-[--mauve-12]">
+                  <td class="font-semibold w-[62px] mx-4 px-2 bg-blue-400 border-4 border-blue-600">
+                    <div class="text-center w-full text-white text-3xl">
+                      2
+                    </div>
+                  </td>
+                  <td class="p-2 bg-blue-100 text-[#080808] pl-3">
+                    <h3 class="font-bold mb-0 leading-tight">
+                      Finance
+                    </h3>
+                    <p class="mt-0 text-sm">
+                      Payouts & Billing
+                    </p>
+                  </td>
+                </tr>
+                <tr class="even:bg-[--mauve-2] odd:bg-white divide-x-4 divide-double divide-[--mauve-12]">
+                  <td class="font-semibold w-[62px] mx-4 px-2 bg-cyan-400 border-4 border-cyan-600">
+                    <div class="text-center w-full text-white text-3xl">
+                      3
+                    </div>
+                  </td>
+                  <td class="p-2 bg-cyan-100 text-[#080808] pl-3">
+                    <h3 class="font-bold mb-0 leading-tight">
+                      Outsourcing
+                    </h3>
+                    <p class="mt-0 text-sm">
+                      HR & Hiring
+                    </p>
+                  </td>
+                </tr>
+                <tr class="even:bg-[--mauve-2] odd:bg-white divide-x-4 divide-double divide-[--mauve-12]">
+                  <td class="font-semibold w-[62px] mx-4 px-2 bg-green-400 border-4 border-green-600">
+                    <div class="text-center w-full text-white text-3xl">
+                      4
+                    </div>
+                  </td>
+                  <td class="p-2 bg-green-100 text-[#080808] pl-3">
+                    <h3 class="font-bold mb-0 leading-tight">
+                      Knowledge Base
+                    </h3>
+                    <p class="mt-0 text-sm">
+                      Documentation
+                    </p>
+                  </td>
+                </tr>
+                <tr class="even:bg-[--mauve-2] odd:bg-white divide-x-4 divide-double divide-[--mauve-12]">
+                  <td class="font-semibold w-[62px] mx-4 px-2 bg-yellow-400 border-4 border-yellow-600">
+                    <div class="text-center w-full text-white text-3xl">
+                      5
+                    </div>
+                  </td>
+                  <td class="p-2 bg-yellow-100 text-[#080808] pl-3">
+                    <h3 class="font-bold mb-0 leading-tight">
+                      Compliance
+                    </h3>
+                    <p class="mt-0 text-sm">
+                      Contracting & Legal
+                    </p>
+                  </td>
+                </tr>
+                <tr class="even:bg-[--mauve-2] odd:bg-white divide-x-4 divide-double divide-[--mauve-12]">
+                  <td class="font-semibold w-[62px] mx-4 px-2 bg-orange-400 border-4 border-orange-600">
+                    <div class="text-center w-full text-white text-3xl">
+                      6
+                    </div>
+                  </td>
+                  <td class="p-2 bg-orange-100 text-[#080808] pl-3">
+                    <h3 class="font-bold mb-0 leading-tight">
+                      Hosting
+                    </h3>
+                    <p class="mt-0 text-sm">
+                      DNS, CDN, & Arduino Servers
+                    </p>
+                  </td>
+                </tr>
+                <tr class="even:bg-[--mauve-2] odd:bg-white divide-x-4 divide-double divide-[--mauve-12] relative">
+                  <td class="font-semibold w-[62px] mx-4 px-2 bg-red-400 border-4 border-red-600">
+                    <div class="text-center w-full text-white text-3xl">
+                      7
+                    </div>
+                  </td>
+                  <td class="p-2 bg-red-100 text-[#080808] pl-3">
+                    <h3 class="font-bold mb-0 leading-tight">
+                      Security
+                    </h3>
+                    <p class="mt-0 text-sm">
+                      Cybersecurity & Compliance
+                    </p>
+                  </td>
+                </tr>
+                <tr class="even:bg-[--mauve-2] odd:bg-white divide-x-4 divide-double divide-[--mauve-12]">
+                  <td class="font-semibold w-[62px] mx-4 px-2 bg-pink-400 border-4 border-pink-600">
+                    <div class="text-center w-full text-white text-3xl">
+                      8
+                    </div>
+                  </td>
+                  <td class="p-2 bg-pink-100 text-[#080808] pl-3">
+                    <h3 class="font-bold mb-0 leading-tight">
+                      Communications
+                    </h3>
+                    <p class="mt-0 text-sm">
+                      PR & Marketing
+                    </p>
+                  </td>
+                </tr>
+                <tr class="even:bg-[--mauve-2] odd:bg-white divide-x-4 divide-double divide-[--mauve-12]">
+                  <td class="font-semibold w-[62px] mx-4 px-2 bg-violet-400 border-4 border-violet-600">
+                    <div class="text-center w-full text-white text-3xl">
+                      9
+                    </div>
+                  </td>
+                  <td class="p-2 bg-violet-100 text-black pl-3">
+                    <h3 class="font-bold mb-0 leading-tight">
+                      Development
+                    </h3>
+                    <p class="mt-0 text-sm">
+                      Tab Storage & Staging Area
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 mx-auto container max-w-4xl relative min-h-24 p-0 gap-0">
+    <latex-js baseURL="https://cdn.jsdelivr.net/npm/latex.js/dist/"
+      class="inline-block h-20 transition-opacity transition-300 opacity-0">
+      \[ r = \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i -
+      \bar{y})}{\sqrt[]{\sum_{i=1}^{n}(x_i - \bar{x})^2
+      \sum_{i=1}^{n}(y_i - \bar{y})^2}} \]
+    </latex-js>
+    <latex-js baseURL="https://cdn.jsdelivr.net/npm/latex.js/dist/"
+      class="inline-block h-20 transition-opacity transition-300 opacity-0">
+      \documentclass{article} \begin{document} The well known
+      Pythagorean theorem \(x^2 + y^2 = z^2\) was proved to be invalid
+      for other exponents. Meaning the next equation has no integer
+      solutions: \[ x^n + y^n = z^n \] \end{document}
+    </latex-js>
+  </div>
+  <div class="prose container mx-auto text-balance max-w-max">
+    <h1 class="prose">Lorem ipsum</h1>
+    <p class="prose">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Voluptatibus repellendus, veritatis tempora, quod facilis eos
+      est fugit omnis earum esse aspernatur incidunt asperiores magni,
+      adipisci molestiae quis iusto ullam officiis! Lorem ipsum dolor
+      sit amet, consectetur adipisicing elit. Voluptatibus
+      repellendus, veritatis tempora, quod facilis eos est fugit omnis
+      earum esse aspernatur incidunt asperiores magni, adipisci
+      molestiae quis iusto ullam officiis!
+    </p>
+  </div>
+  <template id="fruit" class="w-20 h-20">
+    <img id="template-inner"
+      src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍎</text></svg>" />
+  </template>
+</body>
+
+</html>
